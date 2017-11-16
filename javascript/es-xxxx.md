@@ -19,6 +19,13 @@ ESxxxx feature which I've easily forgotten :-(
 # => true
 ```
 
+## Array distinct ( uniq )
+
+```
+const arr = [1, 2, 3, 4, 3, 2, 1];
+const uniq = new Set(arr);
+const uniqArr = Array.from(uniq);
+```
 
 ## Object key as variable
 
