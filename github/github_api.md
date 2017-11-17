@@ -19,3 +19,10 @@ Create your token
 curl -i -H 'Authorization: token <your token>' \
   https://api.github.com/bob1983/repos/dotfiles/issues
 ```
+
+## Paginate
+
+```
+curl -i -H 'Authorization: token <your token>' \
+  https://api.github.com/bob1983/repos/dotfiles/issues?page=1&per_page=10
+```
