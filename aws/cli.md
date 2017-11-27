@@ -26,9 +26,17 @@ aws ec2 describe-instances \
 ```
 
 ```
+# instance id only
 aws ec2 describe-instances \
   --filter "Name=instance-state-name,Values=running" \
 | jq '.Reservations[].Instances[] | select((.Tags[] | select(.Key == "Stages").Value) | match("staging")) | .InstanceId'
+```
+
+```
+# some tags
+aws ec2 describe-instances\
+ --filter "Name=instance-state-name,Values=running" \
+| jq '.Reservations[].Instances[] | select((.Tags[] | select(.Key == "Roles").Value) | match("crawler")) | { InstanceId, PublicIpAddress, LaunchTime }'
 ```
 
 
