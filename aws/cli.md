@@ -22,8 +22,10 @@ aws ec2 describe-instances \
 ```
 aws ec2 describe-instances \
   --filter "Name=instance-state-name,Values=running" \
-|jq '.Reservations[].Instances[] | { Tags: .Tags[] | select(.Key == "Roles") | select(.Value == "app") }'
+|jq '.Reservations[].Instances[] | { Tags: .Tags[] | select(.Key == "Roles") | select(.Value == "app"), .PublicDnsName }'
 ```
+
+
 
 ```
 # instance id only
@@ -36,7 +38,7 @@ aws ec2 describe-instances \
 # some tags
 aws ec2 describe-instances\
  --filter "Name=instance-state-name,Values=running" \
-| jq '.Reservations[].Instances[] | select((.Tags[] | select(.Key == "Roles").Value) | match("crawler")) | { InstanceId, PublicIpAddress, LaunchTime }'
+| jq '.Reservations[].Instances[] | select((.Tags[] | select(.Key == "Roles").Value) | match("crawler")) | { InstanceId, PublicDnsName, LaunchTime }'
 ```
 
 
