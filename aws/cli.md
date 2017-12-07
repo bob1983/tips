@@ -3,7 +3,6 @@
 - [aws cli + jq example](https://gist.github.com/hummus/8592113)
 
 ## Frequently used
-
 ### Show running instances
 
 ```
@@ -37,7 +36,7 @@ aws ec2 describe-instances \
 ```
 # some tags
 aws ec2 describe-instances\
- --filter "Name=instance-state-name,Values=running" \
+  --filter "Name=instance-state-name,Values=running" \
 | jq '.Reservations[].Instances[] | select((.Tags[] | select(.Key == "Roles").Value) | match("crawler")) | { InstanceId, PublicDnsName, LaunchTime }'
 ```
 
@@ -45,9 +44,9 @@ aws ec2 describe-instances\
 ### Runnning instances filter by stages
 
 ```
-aws ec2 describe-instances \
-  --filter "Name=instance-state-name,Values=running" \
-| jq '.Reservations'
+aws ec2 describe-instances\
+  --filter "Name=instance-state-name,Values=running"
+| jq '.Reservations[].Instances[] | select((.Tags[] | select(.Key == "Stages").Value) | match("query"))'
 ```
 
 ### Show images
