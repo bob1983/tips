@@ -1,5 +1,11 @@
 # Scripting
 
+## Set -eu
+
+```
+set -eu
+```
+
 ## Ignore error
 
 ```
