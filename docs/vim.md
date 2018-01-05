@@ -18,9 +18,8 @@ users = [ { name: 'Taro', age: 10 }, { name: 'Jiro', age: 7 } ]
 
 ```
 
-#### vim-surround [plugin](https://github.com/tpope/vim-surround)
-
-### Indent
+### インデント
+ノーマルモード、挿入モード、ヴィジュアルモードそれぞれでのインデントの操作
 
 ```
 # insert mode
@@ -46,8 +45,8 @@ Ctrl-d             # インデントを一段階上げる
 :b#                # 以前に編集していたバッファに移動
 ```
 
-### kill buffer [plugin](https://github.com/qpkorr/vim-bufkill)
-vim-bufkillでウィンドウの状態を保持しつつバッファをクリアできる
+### バッファの削除
+[vim-bufkill](https://github.com/qpkorr/vim-bufkill)でウィンドウの状態を保持しつつバッファをクリアできる
 
 ```
 :BUN               # 対象のファイルをHiddenに
@@ -55,6 +54,8 @@ vim-bufkillでウィンドウの状態を保持しつつバッファをクリア
 ```
 
 ## Ctags
+[Ctags](https://github.com/universal-ctags/ctags)でtagsファイルを作成しておくことで、
+関数などの定義元にジャンプすることができるようになる。
 
 ```
 Ctrl-]             # 定義元へ移動
