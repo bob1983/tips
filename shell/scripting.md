@@ -32,3 +32,15 @@ else
 fi
 ```
 
+## Exist user
+
+```
+id -u <username>
+# => 1001 if user exists
+```
+
+## Exist command
+
+```
+command -v <commandname>
+```
