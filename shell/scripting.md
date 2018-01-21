@@ -44,3 +44,10 @@ id -u <username>
 ```
 command -v <commandname>
 ```
+
+## Remove function/variable
+
+```
+unset -f <function_name>
+unset <variable_name>
+```
