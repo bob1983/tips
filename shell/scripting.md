@@ -51,3 +51,13 @@ command -v <commandname>
 unset -f <function_name>
 unset <variable_name>
 ```
+
+## Check input arguments
+
+```
+# Expect arg1 exist
+if [ -z $1 ]; then return 1; fi
+
+# Expect 4 args
+if [ $# -ne 4]; then return 1; fi
+```

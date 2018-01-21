@@ -84,4 +84,5 @@ A --- B --- C --- D develop
 
 
 ### まとめ
-新機能を作成するときのbaseブランチに対するrebaseは`git rebase --onto`を使うと便利
+新機能を作成するときのbaseブランチに対するrebaseは`git rebase --ontoを使って
+Conflictを回避しましょう。
