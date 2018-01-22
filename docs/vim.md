@@ -62,3 +62,15 @@ Ctrl-]             # 定義元へ移動
 Ctrl-t             # 前の場所に戻る (vimの機能)
 :tag <filename>    # 対象のファイルを開く <tab>補完あり
 ```
+
+## ファイル名
+編集しているファイルが sample_dir/my.txt の場合
+
+```
+%                     # sample_dir/my.txt
+Ctrl-r %              # (挿入モードで)sample_dir/my.txt が挿入される
+Ctrl-r %              # (コマンドモードで)sample_dir/my.txt が挿入される
+:! git add %          # sample_dir/my.txt を git add
+:! git add Ctrl-r %   # sample_dir/my.txt を git add
+```
+
