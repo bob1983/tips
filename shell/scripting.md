@@ -61,3 +61,22 @@ if [ -z $1 ]; then return 1; fi
 # Expect 4 args
 if [ $# -ne 4]; then return 1; fi
 ```
+
+## Get function name
+
+```
+${FUNCNAME[0]}
+```
+
+## Get a path to script itself
+
+```shell
+#!/bin/bash
+
+echo "First arg $0"
+echo "Dirname $(dirname $0)"
+echo "Absolute path $(readlink -f $0)"
+echo "Script path $(dirname $(readlink -f $0))"
+echo "Script path 2 $(cd "$(dirname $0)"; pwd -P)"
+
+```
