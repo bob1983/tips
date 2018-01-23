@@ -84,8 +84,8 @@ DEFAULT_VALUE_FOR_SOME="some"
 
 echo "First arg $0"
 echo "Dirname $(dirname $0)"
-echo "Absolute path $(readlink -f $0)"
-echo "Script path $(dirname $(readlink -f $0))"
-echo "Script path 2 $(cd "$(dirname $0)"; pwd -P)"
+echo "Absolute path for the file's parent dir $(dirname $(readlink -f $0))"
+echo "Absolute path for the script itself $(readlink -f $0)"
+echo "Absolute path for the script itself 2 $(cd "$(dirname $0)"; pwd -P)"
 
 ```
