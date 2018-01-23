@@ -68,6 +68,15 @@ if [ $# -ne 4]; then return 1; fi
 ${FUNCNAME[0]}
 ```
 
+## Set a default value
+
+```shell
+SOME=$1
+DEFAULT_VALUE_FOR_SOME="some"
+: ${SOME:=${DEFAULT_VALUE_FOR_SOME}}
+# Assings DEFAULT_VALUE_FOR_SOME to SOME if SOME is empty
+```
+
 ## Get a path to script itself
 
 ```shell
