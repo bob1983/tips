@@ -26,13 +26,13 @@ scp <old host>:/tmp/letsencrypt.tar.gz ./
 scp ./letsencrypt.tar.gz <new host>:/tmp/
 ```
 
-### アップロードしたファイルを /etc配下に移動する
+## 4. アップロードしたファイルを /etc配下に移動する
 
 ```
 sudo mv /tmp/letsencrypt.tar.gz /etc/
 ```
 
-### tarを解凍する
+## 5. tarを解凍する
 
 
 ```
@@ -45,7 +45,7 @@ sudo tar pxvf letsencrypt.tar.gz
 sudo tree letsencrypt
 ```
 
-### 不要な設定は削除する
+## 6. 不要な設定は削除する
 
 例えば以前のサーバで複数の証明書を使用していた場合は、それらの設定も一緒に
 移行されているので、必要な証明書の設定だけ残します。
@@ -57,7 +57,7 @@ sudo rm -fr /etc/letsencrypt/archived/<domain to be removed>/
 sudo rm -fr /etc/letsencrypt/renewal/<domain to be removed>.conf
 ```
 
-### 証明書の自動更新の設定をする
+## 7. 証明書の自動更新の設定をする
 
 ```
 sudo crontab -e
