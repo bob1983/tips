@@ -43,6 +43,7 @@ Ctrl-d             # インデントを一段階上げる
 :b <buffer_number> # 対象のバッファに移動
 # ※buffer_nameにはタブ補完も使える
 :b#                # 以前に編集していたバッファに移動
+Ctrl-^             # 以前に編集していたバッファに移動
 ```
 
 ### バッファの削除
@@ -74,3 +75,17 @@ Ctrl-r %              # (コマンドモードで)sample_dir/my.txt が挿入さ
 :! git add Ctrl-r %   # sample_dir/my.txt を git add
 ```
 
+## 折りたたみ
+
+```
+zc                    # 折りたたむ
+zo                    # 開く
+```
+
+## ウインドウ
+
+```
+Ctrl-w =              # サイズを揃える
+Ctrl-w _              # 縦方向に最大化
+Ctrl-w |              # 横方向に最大化
+```
