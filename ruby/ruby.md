@@ -64,3 +64,62 @@ grouped.map { |k, v|
 # => {"Apple"=>2, "Orange"=>1, "Apricot"=>1, "Grape"=>1}
 ```
 
+## Hash fallback
+
+```ruby
+data = [
+  { id: 1, name: 'Bob', retired: true },
+  { id: 2, name: 'Alice' },
+  { id: 3, name: 'Jane', retired: false },
+]
+```
+
+You can acccess the hash's value via `#[]`
+
+```
+data.first[:name]
+# => "Bob"
+```
+
+`#[]` method will return nil if the given key doesn't exit on the hash.
+
+```ruby
+data.second[:retired]
+# => nil
+```
+
+You can use || to fallback if the hash value is nil.
+
+```ruby
+data.second[:retired] || false
+# => false
+```
+
+What if you wanted to set `true` unless the hash doesn't contain
+retired key ?
+Is it works with Jane's case ?
+
+```ruby
+data[2][:retired] || true
+# => true
+# ↑ It's not you wanted.
+```
+
+You can use `#fetch` in this case.
+
+```ruby
+data[2].fetch(:retired, true)
+# => false
+data[1].fetch(:retired, true)
+# => true
+```
+
+You can pass a block
+
+```ruby
+data[2].fetch(:retired) do |key|
+  raise "The #{key} value is not set"
+end
+```
+
+[Refs](https://robots.thoughtbot.com/using-hashes-to-bring-back-the-dinosaur)
